@@ -5,10 +5,16 @@
 <form action="#", method="post">
     <label for="url">Enter a URL:</label>
     <input type="url" name="nm" id="url" placeholder="https://xyz.com" pattern="https://.*" size="50" required>
-    <h3>Customize!</h3>
-    <label for="text">agok.com/</label>
-    <input type="text" name="usr" id="text" placeholder="Leave blank to generate random URL" size="50">
+    
     <br>
+    <label for="text">Customize:</label>
+    <div style="clear:both;"></div>
+    <div style="float:left;">
+        <input readonly="" name="id" id="id" value="agok.com/" size="6">       
+    </div>
+    <input type="text" name="usr" id="text" placeholder="Leave blank to generate random URL" size="35">
+    <div style="clear:both;"><br></div>
+    
     <input type="submit" value="Generate" class="btn btn-primary">
 </form>
 {% endblock %}
