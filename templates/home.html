@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Link Shortener{% endblock %}
+
+{% block content %}
+<form action="#", method="post">
+    <label for="url">Enter a URL:</label>
+    <input type="url" name="nm" id="url" placeholder="https://xyz.com" pattern="https://.*" size="50" required>
+    <h3>Customize!</h3>
+    <label for="text">agok.com/</label>
+    <input type="text" name="usr" id="text" placeholder="Leave blank to generate random URL" size="50">
+    <br>
+    <input type="submit" value="Generate" class="btn btn-primary">
+</form>
+{% endblock %}
