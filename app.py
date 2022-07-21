@@ -72,7 +72,7 @@ def redirection(short_url):
     if long_url:
         return redirect(long_url.long)
     else:
-        return f'<h1>URL does not exist</h1>'
+        return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
