@@ -3,6 +3,17 @@
 
 {% block content %}
     <h4>{{already_exists|safe}}</h4>
-    <h1>https://agoko.herokuapp.com/{{short_url_display}}</h1>
-    <a href="https://agoko.herokuapp.com/">BACK TO HOME</a>
+
+    <form action="#">
+        <div style="clear:both;"></div>
+        <div style="float:left;">
+            <input readonly="" name="id" id="id" value="https://agoko.herokuapp.com/{{short_url_display}}" size="30">       
+        </div>
+        <button type="button" id="copy-button"> <span id="copy-button-feedback"></span> Copy to clipboard </button>
+        <div style="clear:both;"><br></div>
+        
+        <div class="d-flex justify-content-center">
+            <button formaction="http://agoko.herokuapp.com/" class="btn btn-primary">Home</button>
+        </div>
+    </form>
 {% endblock %}
