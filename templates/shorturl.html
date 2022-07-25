@@ -8,7 +8,7 @@
         <div style="clear:both;"></div>
         <div class="copy-link">
             <div style="float:left;">
-                <input readonly="" name="id" class="copy-link-input" value="https://agoko.herokuapp.com/{{short_url_display}}" size="30">       
+                <input style="width: 400px" readonly="" name="id" class="copy-link-input" value="https://agoko.herokuapp.com/{{short_url_display}}">       
             </div>
             <button type="button" class="copy-link-button">Copy</button>
         </div>
@@ -21,17 +21,17 @@
 
     <script>
         document.querySelectorAll(".copy-link").forEach(copyLinkContainer => {
-            const inputField = copyLinkContainer.querySelector(".copy-link-input");
-            const copyButton = copyLinkContainer.querySelector(".copy-link-button");
+        const inputField = copyLinkContainer.querySelector(".copy-link-input");
+        const copyButton = copyLinkContainer.querySelector(".copy-link-button");
 
-            inputField.addEventListener("focus", () => inputField.select());
+        inputField.addEventListener("focus", () => inputField.select());
 
-            copyButton.addEventListener("click", () => {
-                const text = inputField.value;
-                inputField.select();
-                navigator.clipboard.writeText(text);
-                copyButton.innerHTML = "Copied!";
-            });
+        copyButton.addEventListener("click", () => {
+            const text = inputField.value;
+            inputField.select();
+            navigator.clipboard.writeText(text);
+            copyButton.innerHTML = "Copied!";
         });
+    });
     </script>
 {% endblock %}

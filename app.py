@@ -11,12 +11,12 @@ app.config['SQLALCHEMY_TRACL_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-maxShortLen = 3
+minShortLen = 3
 
 class Urls(db.Model):
     id_ = db.Column("id_", db.Integer, primary_key=True)
     long = db.Column("long", db.String())
-    short = db.Column("short", db.String(maxShortLen))
+    short = db.Column("short", db.String(minShortLen))
 
     def __init__(self, long, short):
         self.long = long
@@ -26,12 +26,12 @@ class Urls(db.Model):
 def create_tables():
     db.create_all()
 
-def shorten_url():
+def shorten_url(shortLen):
     allLetters = string.ascii_lowercase + string.ascii_uppercase
-    iterations = math.floor(math.pow(len(allLetters), maxShortLen))
+    iterations = math.floor(math.pow(len(allLetters), shortLen))
     for i in range(iterations):
         rand_letters = ""
-        for j in range(maxShortLen): rand_letters += random.choice(allLetters)
+        for j in range(shortLen): rand_letters += random.choice(allLetters)
         short_url = Urls.query.filter_by(short=rand_letters).first()
         if not short_url:
             return rand_letters
@@ -51,7 +51,7 @@ def home():
             return redirect(url_for("display_short_url", url=found_url.short))
         else:
             # create short url randomly or let user define it
-            short_url = shorten_url()
+            short_url = shorten_url(minShortLen)
             if usr_received:
                 short_url = usr_received
             # add to database
@@ -76,3 +76,4 @@ def redirection(short_url):
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
+
