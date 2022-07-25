@@ -4,17 +4,17 @@
 {% block content %}
 <form action="#", method="post">
     <label for="url">Enter a URL:</label>
-    <input type="url" name="nm" id="url" placeholder="https://xyz.com" pattern="https://.*" size="62" required>
+    <input style="width:493px;" type="url" name="nm" id="url" placeholder="https://xyz.com" pattern="https://.*" required>
     
     <br>
     <label for="text">Customize:</label>
     <div style="clear:both;"></div>
     <div style="float:left;">
-        <input readonly="" name="id" id="id" value="agoko.herokuapp.com/" size="18">       
+        <input style="width:187px;" readonly="" name="id" id="id" value="agoko.herokuapp.com/">       
     </div>
-    <input type="text" name="usr" id="text" placeholder="Leave blank to generate random URL" size="36">
+    <input style="width:300px;" type="text" name="usr" id="text" placeholder="Leave blank to generate random URL">
     <div style="clear:both;"><br></div>
     
     <div class="d-flex justify-content-center"><input type="submit" value="Generate" class="btn btn-primary"></div>
-</form>
+</form> 
 {% endblock %}

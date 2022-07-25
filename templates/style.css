@@ -3,3 +3,9 @@
     min-height: 200px;
     border: 1px solid #333;
 }
+
+.input{
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0px;
+}
